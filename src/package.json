@@ -29,6 +29,8 @@
     "angular-route": "^1.6.6",
     "angular-touch": "^1.6.6",
     "angular-ui-bootstrap": "^2.5.0",
-    "bootstrap": "^4.0.0-beta"
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.11.0"
   }
 }
