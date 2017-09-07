@@ -1,11 +1,8 @@
-angular.module('meal-keeper', ['ngRoute'])
+angular.module('meal-keeper', ['ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap'])
 
     .config(function ($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "TODO"
-            })
-            .otherwise({
-                templateUrl: "TODO"
+                templateUrl: "views/teste.html"
             });
     });
