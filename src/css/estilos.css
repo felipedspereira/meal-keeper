@@ -40,11 +40,11 @@ body {
 }
 
 .bg-mealkeeper-header {
-  background: linear-gradient(to top, #ff5500 85%, #9E3200);
+  background: linear-gradient(to top, #ff5500 80%, #9E3200);
 }
 
 .bg-mealkeeper-footer {
-  background: linear-gradient(to bottom, #ff5500 85%, #9E3200);
+  background: linear-gradient(to bottom, #ff5500 80%, #9E3200);
 }
 
 .navbar-dark .navbar-toggler {
