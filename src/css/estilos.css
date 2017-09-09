@@ -75,3 +75,7 @@ body {
 .btn-primary {
   background-color: #ff5500;
 }
+
+.sidebar-nav > .sidebar-brand a {
+  color: white;
+}
