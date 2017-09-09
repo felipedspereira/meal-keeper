@@ -36,18 +36,6 @@ body {
   background-color: #C4B000;
 }
 
-.info {
-  padding: 1px;
-  border-radius: 50%;
-}
-
-.info .fa {
-  color: white;
-}
-
-.azul {
-  background-color: #0040ff;
-}
 .sidebar-menu-mealkeeper {
   background: #eaeaea;
 }
@@ -82,4 +70,8 @@ body {
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
   color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #ff5500;
 }

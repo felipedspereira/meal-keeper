@@ -112,6 +112,7 @@ body {
     }
     #wrapper.toggled #sidebar-wrapper {
         width: 200px;
+        border-right: solid 1px #ff5500;
     }
     #page-content-wrapper {
         padding: 20px;
