@@ -4,7 +4,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" id="menu-toggle"></span>
         </a>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" id="brand">
             <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> mealKeeper
         </a>
     </nav>
@@ -34,6 +34,23 @@
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+
+        // Esconde ou exibe o logo dependendo do sidebar estar aberto
+        if ($('#wrapper').hasClass('toggled')) {
+            $('#brand').hide();
+        } else {
+            $('#brand').delay(200).fadeIn(500);
+        }
     });
 
+    // Fecha o menu caso o usuario clique fora dele
+    $(document).ready(() => {
+        $('#appview').click(function (e) {
+            e.preventDefault();
+            if ($('#wrapper').hasClass('toggled')) {
+                $("#wrapper").toggleClass("toggled");
+                $('#brand').delay(200).fadeIn(500);
+            }
+        });
+    });
 </script>

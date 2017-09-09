@@ -85,14 +85,14 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 65px;
+    height: 56px;
     font-size: 18px;
     line-height: 60px;
     margin-left: -10px;
+    background: linear-gradient(to top, #ff5500 80%, #9E3200);
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #ffff;
     font-size: 20px;
 }
 
