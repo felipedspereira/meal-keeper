@@ -76,6 +76,6 @@ body {
   background-color: #ff5500;
 }
 
-.sidebar-nav > .sidebar-brand a {
+.sidebar-nav > .sidebar-brand {
   color: white;
 }
