@@ -36,4 +36,13 @@
         $("#wrapper").toggleClass("toggled");
     });
 
+    // Fecha o menu caso o usuario clique fora dele
+    $(document).ready(() => {
+        $('#appview').click(function (e) {
+            e.preventDefault();
+            if ($('#wrapper').hasClass('toggled')) {
+                $("#wrapper").toggleClass("toggled");
+            }
+        });
+    });
 </script>
