@@ -1,6 +1,40 @@
 angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
     var _getRefeicao = (idRefeicao) => {
         return {
+            "dsRefeicao": "Em jejum",
+            "produtos": [
+                {
+                    "dsProduto": 'Clorofila ou couve',
+                    "dsMedidaCaseira": "2 colheres de sopa ou 1 folha",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Suplemento'
+                }, {
+                    "dsProduto": 'Limão ou maçã',
+                    "dsMedidaCaseira": "1 unidade",
+                    "dsPorcao": '',
+                    "dsCategoria": ''
+                }, {
+                    "dsProduto": 'Maca peruana',
+                    "dsMedidaCaseira": "1 colher de café",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Suplemento'
+                }, {
+                    "dsProduto": 'Própolis',
+                    "dsMedidaCaseira": "20 gotas",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Suplemento'
+                }, {
+                    "dsProduto": 'Glutamina em pó',
+                    "dsMedidaCaseira": "1 medida",
+                    "dsPorcao": 5,
+                    "dsCategoria": 'Suplemento'
+                }, {
+                    "dsProduto": 'Probiatop ou Simfort',
+                    "dsMedidaCaseira": "1 sachê",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Suplemento'
+                }
+            ]
             // "dsRefeicao": "Desjejum",
             // "produtos": [
             //     {
@@ -116,38 +150,39 @@ angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
             //     }
             // ]
 
-            "dsRefeicao": "Jantar",
-            "produtos": [
-                {
-                    "dsProduto": 'Rap 10 fit ou integral',
-                    "dsMedidaCaseira": "1 unidade",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Pães e Similares'
-                }, {
-                    "dsProduto": 'Alface, tomate, rúcula',
-                    "dsMedidaCaseira": "à vontade",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Vegetal cru ou cozido'
-                }, {
-                    "dsProduto": 'Atum ao natural (s/ óleo)',
-                    "dsMedidaCaseira": "4 colheres de sopa",
-                    "dsPorcao": 40,
-                    "dsCategoria": 'Carnes'
-                }, {
-                    "dsProduto": 'Creme de ricota',
-                    "dsMedidaCaseira": "2 colheres de sobremesa cheias",
-                    "dsPorcao": 40,
-                    "dsCategoria": 'Leite e derivados'
-                }, {
-                    "dsProduto": 'Gergelim',
-                    "dsMedidaCaseira": "1 colher de sobremesa",
-                    "dsPorcao": 3,
-                    "dsCategoria": 'Castanhas'
-                }
-            ]
+
+            // "dsRefeicao": "Jantar",
+            // "produtos": [
+            //     {
+            //         "dsProduto": 'Rap 10 fit ou integral',
+            //         "dsMedidaCaseira": "1 unidade",
+            //         "dsPorcao": '',
+            //         "dsCategoria": 'Pães e Similares'
+            //     }, {
+            //         "dsProduto": 'Alface, tomate, rúcula',
+            //         "dsMedidaCaseira": "à vontade",
+            //         "dsPorcao": '',
+            //         "dsCategoria": 'Vegetal cru ou cozido'
+            //     }, {
+            //         "dsProduto": 'Atum ao natural (s/ óleo)',
+            //         "dsMedidaCaseira": "4 colheres de sopa",
+            //         "dsPorcao": 40,
+            //         "dsCategoria": 'Carnes'
+            //     }, {
+            //         "dsProduto": 'Creme de ricota',
+            //         "dsMedidaCaseira": "2 colheres de sobremesa cheias",
+            //         "dsPorcao": 40,
+            //         "dsCategoria": 'Leite e derivados'
+            //     }, {
+            //         "dsProduto": 'Gergelim',
+            //         "dsMedidaCaseira": "1 colher de sobremesa",
+            //         "dsPorcao": 3,
+            //         "dsCategoria": 'Castanhas'
+            //     }
+            // ]
 
 
-            
+
         };
     };
     return {
