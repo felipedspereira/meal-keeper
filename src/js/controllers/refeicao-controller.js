@@ -1,6 +1,6 @@
 angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'RefeicaoService', '$routeParams',
     function ($scope, RefeicaoService, $routeParams) {
-        $scope.produtos = [];
+        $scope.refeicao = {};
         $scope.mensagem = '';
 
         $scope.onPress = (produto) => {
@@ -10,7 +10,7 @@ angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'Refei
           };
 
         if ($routeParams.idRefeicao) {
-            $scope.produtos = RefeicaoService.getRefeicao();
+            $scope.refeicao = RefeicaoService.getRefeicao();
 
             /*.then((resp) => {
                 console.log(resp);

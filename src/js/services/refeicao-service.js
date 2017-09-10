@@ -1,37 +1,154 @@
 angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
     var _getRefeicao = (idRefeicao) => {
-        return [{
-            "dsProduto": 'Goma de tapioca',
-            "dsMedidaCaseira": "3 colher(es) de sopa",
-            "dsPorcao": 40,
-            "dsCategoria": 'Pães e Similares'
-        }, {
-            "dsProduto": 'Semente de chia',
-            "dsMedidaCaseira": "1 colher(es) de sobremesa",
-            "dsPorcao": 6,
-            "dsCategoria": 'Castanhas'
-        }, {
-            "dsProduto": 'Ovo frito no microondas',
-            "dsMedidaCaseira": "2 unidade(s)",
-            "dsPorcao": '',
-            "dsCategoria": 'Carnes'
-        }, {
-            "dsProduto": 'Queijo Minas, Frescal ou Búfala',
-            "dsMedidaCaseira": "2 unidade(s)",
-            "dsPorcao": '40',
-            "dsCategoria": 'Leite e derivados'
-        }, {
-            "dsProduto": 'Café',
-            "dsMedidaCaseira": "1 xícara",
-            "dsPorcao": '',
-            "dsCategoria": ''
-        }, {
-            "dsProduto": 'Leite desnatado em pó',
-            "dsMedidaCaseira": "2 colher(es) de sobremesa",
-            "dsPorcao": '20',
-            "dsCategoria": 'Leite e derivados'
-        }
-        ];
+        return {
+            // "dsRefeicao": "Desjejum",
+            // "produtos": [
+            //     {
+            //         "dsProduto": 'Pão de forma 100% integral',
+            //         "dsMedidaCaseira": "2 fatias",
+            //         "dsPorcao": 50,
+            //         "dsCategoria": 'Pães e Similares'
+            //     }, {
+            //         "dsProduto": 'Presunto de Peru',
+            //         "dsMedidaCaseira": "2 fatias",
+            //         "dsPorcao": 56,
+            //         "dsCategoria": 'Carnes'
+            //     }, {
+            //         "dsProduto": 'Queijo Minas, Frescal ou Búfala',
+            //         "dsMedidaCaseira": "2-3 fatias pequenas",
+            //         "dsPorcao": 40,
+            //         "dsCategoria": 'Leite e derivados'
+            //     }, {
+            //         "dsProduto": 'Café',
+            //         "dsMedidaCaseira": "1 xícara",
+            //         "dsPorcao": '',
+            //         "dsCategoria": ''
+            //     }, {
+            //         "dsProduto": 'Leite desnatado em pó',
+            //         "dsMedidaCaseira": "2 colher(es) de sobremesa",
+            //         "dsPorcao": '20',
+            //         "dsCategoria": 'Leite e derivados'
+            //     }
+            // ]
+
+
+
+            // "dsRefeicao": "Colação",
+            // "produtos": [
+            //     {
+            //         "dsProduto": 'Pão de forma 100% integral',
+            //         "dsMedidaCaseira": "1 fatia",
+            //         "dsPorcao": 25,
+            //         "dsCategoria": 'Pães e Similares'
+            //     }, {
+            //         "dsProduto": 'Atum ao natural (sem óleo)',
+            //         "dsMedidaCaseira": "2 colheres de sopa",
+            //         "dsPorcao": 40,
+            //         "dsCategoria": 'Carnes'
+            //     }, {
+            //         "dsProduto": 'Queijo Minas, Frescal ou Búfala',
+            //         "dsMedidaCaseira": "2-3 fatias pequenas",
+            //         "dsPorcao": 40,
+            //         "dsCategoria": 'Leite e derivados'
+            //     }, {
+            //         "dsProduto": 'Farinha de Linhaça Dourada',
+            //         "dsMedidaCaseira": "1 colher de chá",
+            //         "dsPorcao": 3,
+            //         "dsCategoria": 'Castanhas'
+            //     }
+            // ]
+
+
+
+            // "dsRefeicao": "Almoço",
+            // "produtos": [
+            //     {
+            //         "dsProduto": 'Salada crua e colorida',
+            //         "dsMedidaCaseira": "à vontade",
+            //         "dsPorcao": '',
+            //         "dsCategoria": 'Vegetal cru ou cozido'
+            //     }, {
+            //         "dsProduto": 'Vagem refogada',
+            //         "dsMedidaCaseira": "4 colheres de sopa",
+            //         "dsPorcao": 100,
+            //         "dsCategoria": 'Vegetal refogado, grelhado ou a vapor'
+            //     }, {
+            //         "dsProduto": 'Bife grelhado',
+            //         "dsMedidaCaseira": "1,5 unidade pequena",
+            //         "dsPorcao": 90,
+            //         "dsCategoria": 'Carnes'
+            //     }, {
+            //         "dsProduto": 'Espaguete integral cozido',
+            //         "dsMedidaCaseira": "0,5 pegador",
+            //         "dsPorcao": 37.5,
+            //         "dsCategoria": 'Arroz'
+            //     }, {
+            //         "dsProduto": 'Feijão marrom',
+            //         "dsMedidaCaseira": "0,5 concha média",
+            //         "dsPorcao": 25,
+            //         "dsCategoria": 'Feijão'
+            //     }, {
+            //         "dsProduto": 'Vitamina C 1g + Ômega 3 1g',
+            //         "dsMedidaCaseira": "",
+            //         "dsPorcao": '',
+            //         "dsCategoria": 'Suplemento'
+            //     }
+            // ]
+
+
+            // "dsRefeicao": "Lanche",
+            // "produtos": [
+            //     {
+            //         "dsProduto": 'Morango',
+            //         "dsMedidaCaseira": "10 unidades",
+            //         "dsPorcao": '150',
+            //         "dsCategoria": 'Frutas'
+            //     }, {
+            //         "dsProduto": 'Iogurte',
+            //         "dsMedidaCaseira": "1 unidade",
+            //         "dsPorcao": 180,
+            //         "dsCategoria": 'Leite e derivados'
+            //     }, {
+            //         "dsProduto": 'Castanha do Brasil s/ sal',
+            //         "dsMedidaCaseira": "2 unidades",
+            //         "dsPorcao": 8,
+            //         "dsCategoria": 'Castanhas'
+            //     }
+            // ]
+
+            "dsRefeicao": "Jantar",
+            "produtos": [
+                {
+                    "dsProduto": 'Rap 10 fit ou integral',
+                    "dsMedidaCaseira": "1 unidade",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Pães e Similares'
+                }, {
+                    "dsProduto": 'Alface, tomate, rúcula',
+                    "dsMedidaCaseira": "à vontade",
+                    "dsPorcao": '',
+                    "dsCategoria": 'Vegetal cru ou cozido'
+                }, {
+                    "dsProduto": 'Atum ao natural (s/ óleo)',
+                    "dsMedidaCaseira": "4 colheres de sopa",
+                    "dsPorcao": 40,
+                    "dsCategoria": 'Carnes'
+                }, {
+                    "dsProduto": 'Creme de ricota',
+                    "dsMedidaCaseira": "2 colheres de sobremesa cheias",
+                    "dsPorcao": 40,
+                    "dsCategoria": 'Leite e derivados'
+                }, {
+                    "dsProduto": 'Gergelim',
+                    "dsMedidaCaseira": "1 colher de sobremesa",
+                    "dsPorcao": 3,
+                    "dsCategoria": 'Castanhas'
+                }
+            ]
+
+
+            
+        };
     };
     return {
         getRefeicao: _getRefeicao
