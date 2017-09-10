@@ -3,6 +3,12 @@ angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'Refei
         $scope.produtos = [];
         $scope.mensagem = '';
 
+        $scope.onPress = (produto) => {
+
+            console.log('chegou ate aqui..')
+
+          };
+
         if ($routeParams.idRefeicao) {
             $scope.produtos = RefeicaoService.getRefeicao();
 
