@@ -14,7 +14,7 @@ angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
             "dsProduto": 'Ovo frito no microondas',
             "dsMedidaCaseira": "2 unidade(s)",
             "dsPorcao": '',
-            "dsCategoria": 'Castanhas'
+            "dsCategoria": 'Carnes'
         }, {
             "dsProduto": 'Queijo Minas, Frescal ou Búfala',
             "dsMedidaCaseira": "2 unidade(s)",

@@ -28,12 +28,40 @@ body {
   margin: 5px;
 }
 
-.categoria .fa {
+.categoria .img {
   color: white;
 }
 
-.amarelo {
-  background-color: #C4B000;
+.castanha {
+  background-color: #6c3706;
+}
+
+.pao {
+  background-color: #ffc628;
+}
+
+.leite {
+  background-color: #2980b9;
+}
+
+.carne {
+  background-color: #c0392b;
+}
+
+.feijao {
+  background-color: #0a0000;
+}
+
+.arroz {
+  background-color: #16a085;
+}
+
+.vegetal {
+  background-color: #8e44ad;
+}
+
+.fruta {
+  background-color: #2ecc71;
 }
 
 .sidebar-menu-mealkeeper {
