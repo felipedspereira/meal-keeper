@@ -1,6 +1,6 @@
-angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'RefeicaoService', '$routeParams', 'ProdutoService', '$rootScope', '$timeout', 'MessageService',
-    function ($scope, RefeicaoService, $routeParams, ProdutoService, $rootScope, $timeout, MessageService) {
-        $scope.produtos = [];
+angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'RefeicaoService', '$routeParams', 'ProdutoService', 'MessageService', 
+    function ($scope, RefeicaoService, $routeParams, ProdutoService, MessageService) {
+        $scope.refeicao = {};
         $scope.mensagem = '';
         $scope.listaSubstituicao = [];
         $scope.produtoSelecionado = null; // produto a ser trocado
@@ -39,7 +39,7 @@ angular.module('meal-keeper').controller('RefeicaoController', ['$scope', 'Refei
         };
 
         if ($routeParams.idRefeicao) {
-            $scope.produtos = RefeicaoService.getRefeicao();
+            $scope.refeicao = RefeicaoService.getRefeicao();
 
             /*.then((resp) => {
                 console.log(resp);

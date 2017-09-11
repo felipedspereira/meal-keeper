@@ -1,6 +1,13 @@
-<img src="images/desjejum.jpg" class="img-fluid">
+<img src="images/emjejum.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Em jejum'">
+<img src="images/desjejum.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Desjejum'">
+<img src="images/colacao.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Colação'">
+<img src="images/almoco.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Almoço'">
+<img src="images/lanche.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Lanche'">
+<img src="images/jantar.jpg" class="img-fluid" ng-if="refeicao.dsRefeicao == 'Jantar'">
+
+
 <div class="list-group">
-    <li class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="produto in produtos">
+    <li class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="produto in refeicao.produtos">
 
         <div hm-press="onPress(produto)">
             <span class="categoria pao" style="float:right;" ng-if="produto.dsCategoria == 'Pães e Similares'"> 
@@ -15,7 +22,18 @@
             <span class="categoria leite" style="float:right;" ng-if="produto.dsCategoria == 'Leite e derivados'"> 
                 <img src="images/leite.png" class="img-fluid">
             </span>
-
+            <span class="categoria arroz" style="float:right;" ng-if="produto.dsCategoria == 'Arroz'"> 
+                <img src="images/arroz.png" class="img-fluid">
+            </span>
+            <span class="categoria feijao" style="float:right;" ng-if="produto.dsCategoria == 'Feijão'"> 
+                <img src="images/feijao.png" class="img-fluid">
+            </span>
+            <span class="categoria vegetal" style="float:right;" ng-if="produto.dsCategoria == 'Vegetal refogado, grelhado ou a vapor'"> 
+                <img src="images/vegetal.png" class="img-fluid">
+            </span>
+            <span class="categoria fruta" style="float:right;" ng-if="produto.dsCategoria == 'Frutas'"> 
+                <img src="images/fruta.png" class="img-fluid">
+            </span>
             <h5 class="mb-1">{{produto.dsProduto}}</h5>
 
             <small>{{produto.dsMedidaCaseira}} ou {{produto.dsPorcao}}g</small>
