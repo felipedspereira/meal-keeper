@@ -1,6 +1,6 @@
 angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
-    var _getRefeicao = (idRefeicao) => {
-        return [{
+    let produtos = [
+        {
             "dsProduto": 'Goma de tapioca',
             "dsMedidaCaseira": "3 colher(es) de sopa",
             "dsPorcao": 40,
@@ -31,9 +31,26 @@ angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
             "dsPorcao": '20',
             "dsCategoria": 'Leite e derivados'
         }
-        ];
+    ];
+
+    let _getRefeicao = (idRefeicao) => {
+        return produtos;
     };
+
+    let _trocaItemDaRefeicao = (produtoAntigo, produtoNovo) => {
+        produtos = produtos.map((produto) => {
+            if (produto.dsProduto == produtoAntigo.dsProduto) {
+                return produtoNovo;
+            }
+
+            return produto;
+        });
+
+        return produtos;
+    }
+
     return {
-        getRefeicao: _getRefeicao
+        getRefeicao: _getRefeicao,
+        trocaItemDaRefeicao: _trocaItemDaRefeicao
     }
 }]);
