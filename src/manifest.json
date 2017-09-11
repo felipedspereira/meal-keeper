@@ -1,0 +1,7 @@
+{
+    "name": "mealKeeper Nutrition",
+    "short_name": "mealKeeper",
+    "lang": "pt-BR",
+    "start_url": "/",
+    "display": "standalone"
+  }
