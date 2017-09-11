@@ -1,4 +1,4 @@
-angular.module('meal-keeper', ['ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap', 'hmTouchEvents'])
+angular.module('meal-keeper', ['ngRoute', 'hmTouchEvents'])
 
     .config(function ($routeProvider) {
         $routeProvider
