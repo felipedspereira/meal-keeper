@@ -3,10 +3,12 @@
 html {
   position: relative;
   min-height: 100%;
+  user-select: none;
 }
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  user-select: none;
 }
 .footer {
   position: absolute;
@@ -80,6 +82,11 @@ body {
   border-color: white;
 }
 
+nav.navbar {
+  position:fixed;
+  width:100%;
+}
+
 /* Estilizando navbar */
 /* change the background color */
 .navbar-custom {
@@ -106,4 +113,20 @@ body {
 
 .sidebar-nav > .sidebar-brand {
   color: white;
+}
+
+.alert {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+}
+
+.fade {
+  transition: .5s linear all;  
+  opacity: 1;
+}
+
+.fade.ng-hide {
+  opacity: 0;
 }
