@@ -167,12 +167,12 @@ angular.module('meal-keeper').factory('RefeicaoService', [function ($http) {
         //     }, {
         //         "dsProduto": 'Atum ao natural (s/ óleo)',
         //         "dsMedidaCaseira": "4 colheres de sopa",
-        //         "dsPorcao": 40,
+        //         "dsPorcao": 80,
         //         "dsCategoria": 'Carnes'
         //     }, {
         //         "dsProduto": 'Creme de ricota',
-        //         "dsMedidaCaseira": "2 colheres de sobremesa cheias",
-        //         "dsPorcao": 40,
+        //         "dsMedidaCaseira": "1 colher de sopa",
+        //         "dsPorcao": 35,
         //         "dsCategoria": 'Leite e derivados'
         //     }, {
         //         "dsProduto": 'Gergelim',
