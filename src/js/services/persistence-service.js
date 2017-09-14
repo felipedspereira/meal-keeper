@@ -197,7 +197,17 @@ angular.module('nutrikeeper').factory('PersistenceService', [function () {
     ];
 
     let _saveList = (data, key) => {
-        localStorage.setItem(key, data);
+        let lista = _getList(key);
+
+        data = lista.map(refeicao => {
+            if (refeicao.id == data.id) {
+                return data;
+            }
+
+            return refeicao;
+        });
+
+        localStorage.setItem(key, JSON.stringify(data));
     }
 
     let _getList = (key) => {

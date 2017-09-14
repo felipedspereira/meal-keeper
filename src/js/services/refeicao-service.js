@@ -25,7 +25,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
             return produto;
         });
 
-        PersistenceService.saveList(refeicaoSelecionada, KEY_REFEICOES);
+        PersistenceService.save(refeicaoSelecionada, KEY_REFEICOES);
 
         return refeicaoSelecionada.produtos;
     }
