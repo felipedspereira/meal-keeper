@@ -1,6 +1,6 @@
 {
-    "name": "mealKeeper Nutrition",
-    "short_name": "mealKeeper",
+    "name": "Nutrition Keeper",
+    "short_name": "Nutri Keeper",
     "lang": "pt-BR",
     "start_url": "/",
     "display": "standalone"

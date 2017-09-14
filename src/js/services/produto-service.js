@@ -1,8 +1,5 @@
-angular.module('meal-keeper').factory('ProdutoService', [function ($http) {
-    
-    
-    
-    var _getProduto = (idProduto) => {
+angular.module('nutrikeeper').factory('ProdutoService', ['$http', function ($http) {
+    let _getProduto = (idProduto) => {
         return {
             "dsProduto": 'Amaranto',
             "dsMedidaCaseira": "2 colher(es) de sopa",
@@ -12,7 +9,7 @@ angular.module('meal-keeper').factory('ProdutoService', [function ($http) {
         };
     };
 
-    var _getProdutos = (categoria) => {
+    let _getProdutos = (categoria) => {
         return [
             {
                 "dsProduto": 'Amaranto',

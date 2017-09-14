@@ -1,4 +1,7 @@
-angular.module('meal-keeper').factory('MessageService', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
+/**
+ * Criação de mensagens ao usuário.
+ */
+angular.module('nutrikeeper').factory('MessageService', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
 
     let _success = (message, delay = 2000) => {
         $rootScope.successMessage = message;

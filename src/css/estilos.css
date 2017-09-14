@@ -66,15 +66,15 @@ body {
   background-color: #2ecc71;
 }
 
-.sidebar-menu-mealkeeper {
+.sidebar-menu-nutrikeeper {
   background: #eaeaea;
 }
 
-.bg-mealkeeper-header {
+.bg-nutrikeeper-header {
   background: linear-gradient(to top, #ff5500 80%, #9E3200);
 }
 
-.bg-mealkeeper-footer {
+.bg-nutrikeeper-footer {
   background: linear-gradient(to bottom, #ff5500 80%, #9E3200);
 }
 

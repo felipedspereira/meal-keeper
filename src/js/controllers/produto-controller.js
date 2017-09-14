@@ -1,4 +1,4 @@
-angular.module('meal-keeper').controller('ProdutoController', ['$scope', 'ProdutoService', '$routeParams',
+angular.module('nutrikeeper').controller('ProdutoController', ['$scope', 'ProdutoService', '$routeParams',
     function ($scope, ProdutoService, $routeParams) {
         $scope.produto = {};
         $scope.mensagem = '';
