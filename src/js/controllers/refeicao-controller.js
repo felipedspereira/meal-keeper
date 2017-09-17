@@ -1,5 +1,5 @@
-angular.module('nutrikeeper').controller('RefeicaoController', ['$scope', '$document', 'RefeicaoService', '$routeParams', 'ProdutoService', 'MessageService', 
-    function ($scope, $document, RefeicaoService, $routeParams, ProdutoService, MessageService) {
+angular.module('nutrikeeper').controller('RefeicaoController', ['$scope', '$document', 'RefeicaoService', '$routeParams', 'ProdutoService', 'MessageService', '$location', 
+    function ($scope, $document, RefeicaoService, $routeParams, ProdutoService, MessageService, $location) {
         $scope.refeicao = {};
         $scope.mensagem = '';
         $scope.listaSubstituicao = [];
@@ -51,5 +51,9 @@ angular.module('nutrikeeper').controller('RefeicaoController', ['$scope', '$docu
 
         if ($routeParams.idRefeicao) {
             $scope.refeicao = RefeicaoService.getRefeicao($routeParams.idRefeicao);
+        }
+
+        $scope.doNavigation = (idRefeicao) => {
+            $location.path('/refeicoes/view/' + idRefeicao)
         }
     }]);

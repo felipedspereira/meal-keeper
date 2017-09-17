@@ -132,6 +132,14 @@ nav.navbar {
   opacity: 0;
 }
 
-.img-refeicao {
+.padding-navbar {
   padding-top: 56px;
+}
+
+.card-body {
+  padding: 0.25em;
+}
+
+.card-img-top {
+  height: 75%;
 }
