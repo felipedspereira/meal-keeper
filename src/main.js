@@ -18,4 +18,7 @@ angular.module('nutrikeeper', ['ngRoute', 'hmTouchEvents', 'ngAnimate'])
            .when("/", {
                 templateUrl: "views/teste.html"
             });
-    });
+    })
+    .run(['RefeicaoService', 'ProdutoService', function(RefeicaoService, ProdutoService) {
+        // forçando inicialização do banco de dados de refeicao e produto
+    }]);

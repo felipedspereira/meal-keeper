@@ -2,6 +2,6 @@
     "name": "Nutrition Keeper",
     "short_name": "Nutri Keeper",
     "lang": "pt-BR",
-    "start_url": "/",
+    "start_url": "/#!/refeicoes",
     "display": "standalone"
   }
