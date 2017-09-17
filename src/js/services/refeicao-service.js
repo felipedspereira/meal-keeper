@@ -115,7 +115,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
                     "dsProduto": 'Vagem refogada',
                     "dsMedidaCaseira": "4 colheres de sopa",
                     "dsPorcao": 100,
-                    "dsCategoria": 'Vegetal refogado, grelhado ou a vapor'
+                    "dsCategoria": 'Vegetal refogado, grelhado ou vapor'
                 }, {
                     "dsProduto": 'Bife grelhado',
                     "dsMedidaCaseira": "1,5 unidade pequena",
@@ -148,7 +148,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
                     "dsProduto": 'Morango',
                     "dsMedidaCaseira": "10 unidades",
                     "dsPorcao": '150',
-                    "dsCategoria": 'Frutas'
+                    "dsCategoria": 'Fruta'
                 }, {
                     "dsProduto": 'Iogurte',
                     "dsMedidaCaseira": "1 unidade",

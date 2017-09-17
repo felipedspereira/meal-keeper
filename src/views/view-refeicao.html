@@ -28,10 +28,10 @@
             <span class="categoria feijao" style="float:right;" ng-if="produto.dsCategoria == 'Feijão'"> 
                 <img src="images/feijao.png" class="img-fluid">
             </span>
-            <span class="categoria vegetal" style="float:right;" ng-if="produto.dsCategoria == 'Vegetal refogado, grelhado ou a vapor'"> 
+            <span class="categoria vegetal" style="float:right;" ng-if="produto.dsCategoria == 'Vegetal refogado, grelhado ou vapor'"> 
                 <img src="images/vegetal.png" class="img-fluid">
             </span>
-            <span class="categoria fruta" style="float:right;" ng-if="produto.dsCategoria == 'Frutas'"> 
+            <span class="categoria fruta" style="float:right;" ng-if="produto.dsCategoria == 'Fruta'"> 
                 <img src="images/fruta.png" class="img-fluid">
             </span>
             <h5 class="mb-1">{{produto.dsProduto}}</h5>
@@ -65,6 +65,18 @@
                         </span>
                         <span class="categoria leite" ng-if="produtoSelecionado.dsCategoria == 'Leite e derivados'"> 
                             <img src="images/leite.png" class="img-fluid">
+                        </span>
+                        <span class="categoria arroz" ng-if="produtoSelecionado.dsCategoria == 'Arroz'"> 
+                            <img src="images/arroz.png" class="img-fluid">
+                        </span>
+                        <span class="categoria feijao" ng-if="produtoSelecionado.dsCategoria == 'Feijão'"> 
+                            <img src="images/feijao.png" class="img-fluid">
+                        </span>
+                        <span class="categoria vegetal" ng-if="produtoSelecionado.dsCategoria == 'Vegetal refogado, grelhado ou vapor'"> 
+                            <img src="images/vegetal.png" class="img-fluid">
+                        </span>
+                        <span class="categoria fruta" ng-if="produtoSelecionado.dsCategoria == 'Fruta'"> 
+                            <img src="images/fruta.png" class="img-fluid">
                         </span>
                         <div class="d-flex">
                             <span class="align-self-center p-2 bd-highlight">{{produtoSelecionado.dsCategoria}}</span>
