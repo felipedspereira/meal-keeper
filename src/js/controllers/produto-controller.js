@@ -4,7 +4,7 @@ angular.module('nutrikeeper').controller('ProdutoController', ['$scope', 'Produt
         $scope.mensagem = '';
 
         if ($routeParams.idProduto) {
-            $scope.produto = ProdutoService.getProduto();
+            $scope.produto = ProdutoService.getProduto($routeParams.idProduto);
             
                 /*.then((resp) => {
                     console.log(resp);

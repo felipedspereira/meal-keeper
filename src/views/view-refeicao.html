@@ -79,7 +79,7 @@
                 <div class="list-group" style="overflow-y: auto; height: 250px; padding: 0">
                     <li class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="list" ng-repeat="produto in listaSubstituicao" ng-click="selecionaNovoProduto(produto)">
                         <h5 class="mb-1">{{produto.dsProduto}}</h5>
-                        <small>{{produto.dsMedidaCaseira}} ou {{produto.dsPorcao}}g</small>
+                        <small>{{produto.nrGrama}}{{produto.unidade}} ou {{produto.nrMedida}} {{produto.dsMedida}}</small>
                     </li>
                 </div>
             </div>
