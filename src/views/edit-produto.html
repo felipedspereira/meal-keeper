@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="dsCategoria" class="col-sm-12 col-form-label">Categoria</label>
-            
+
             <div class="container">
                 <div class="row">
                     <span class="categoria pao" ng-if="produto.dsCategoria == 'Pães e Similares'"> 
@@ -36,6 +36,19 @@
                     <span class="categoria leite" ng-if="produto.dsCategoria == 'Leite e derivados'"> 
                         <img src="images/leite.png" class="img-fluid">
                     </span>
+                    <span class="categoria arroz" ng-if="produto.dsCategoria == 'Arroz'"> 
+                        <img src="images/arroz.png" class="img-fluid">
+                    </span>
+                    <span class="categoria feijao" ng-if="produto.dsCategoria == 'Feijão'"> 
+                        <img src="images/feijao.png" class="img-fluid">
+                    </span>
+                    <span class="categoria vegetal" ng-if="produto.dsCategoria == 'Vegetal refogado, grelhado ou a vapor'"> 
+                        <img src="images/vegetal.png" class="img-fluid">
+                    </span>
+                    <span class="categoria fruta" ng-if="produto.dsCategoria == 'Fruta'"> 
+                        <img src="images/fruta.png" class="img-fluid">
+                    </span>
+
                     <div class="d-flex">
                         <span class="align-self-center p-2 bd-highlight">{{produto.dsCategoria}}</span>
                     </div>
