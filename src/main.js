@@ -11,6 +11,10 @@ angular.module('nutrikeeper', ['ngRoute', 'hmTouchEvents', 'ngAnimate'])
                 controller: 'RefeicaoController'
 
             })
+            .when("/refeicoes", {
+                 templateUrl: "views/refeicoes.html",
+                 controller: 'RefeicaoController'
+             })
            .when("/", {
                 templateUrl: "views/teste.html"
             });
