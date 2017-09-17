@@ -9,6 +9,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   user-select: none;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 .footer {
   position: absolute;
@@ -129,4 +130,8 @@ nav.navbar {
 
 .fade.ng-hide {
   opacity: 0;
+}
+
+.img-refeicao {
+  padding-top: 56px;
 }
