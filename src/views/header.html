@@ -16,7 +16,7 @@
                 <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>   nutrikeeper
             </li>
             <li>
-                <a href="#">Lista de substituição</a>
+                <a href="#!/refeicoes">Lista de substituição</a>
             </li>
             <li>
                 <a href="#">Sobre</a>
@@ -50,5 +50,11 @@
                 $('#brand').delay(200).fadeIn(500);
             }
         });
+    });
+
+    // trata navegacao do menu
+    $('li').click(() => {
+        $("#wrapper").toggleClass("toggled");
+        $('#brand').delay(200).fadeIn(500);
     });
 </script>
