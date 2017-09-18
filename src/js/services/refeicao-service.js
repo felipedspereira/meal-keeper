@@ -1,141 +1,93 @@
-angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceService', function ($http, PersistenceService) {
+angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceService', 'ProdutoService', function ($http, PersistenceService, ProdutoService) {
     const KEY_REFEICOES = 'nk-refeicoes';
 
     const refeicoes = [
         {
             "id": 1,
             "dsRefeicao": "Em jejum",
-            "produtos": [
+            "itens": [
                 {
-                    "dsProduto": 'Clorofila ou couve',
-                    "dsMedidaCaseira": "2 colheres de sopa ou 1 folha",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Limão ou maçã',
-                    "dsMedidaCaseira": "1 unidade",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Maca peruana',
-                    "dsMedidaCaseira": "1 colher de café",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Própolis',
-                    "dsMedidaCaseira": "20 gotas",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Glutamina em pó',
-                    "dsMedidaCaseira": "1 medida",
-                    "dsPorcao": 5,
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Probiatop ou Simfort',
-                    "dsMedidaCaseira": "1 sachê",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
+                    "produto": {
+                        "dsProduto": 'Clorofila ou couve',
+                        "dsMedida": "2 colheres de sopa ou 1 folha",
+                    }
+                },
+                {
+                    "produto": {
+                        "dsProduto": 'Limão ou maçã',
+                        "dsMedida": "1 unidade",
+                    }
+                },
+                {
+                    "produto": {
+                        "dsProduto": 'Maca peruana',
+                        "dsMedida": "1 colher de café",
+                    }
+                },
+                {
+                    "produto": {
+                        "dsProduto": 'Própolis',
+                        "dsMedida": "20 gotas",
+                    }
+                },
+                {
+                    "produto": {
+                        "dsProduto": 'Glutamina em pó',
+                        "dsMedida": "1 medida",
+                    }
+                },
+                {
+                    "produto": {
+                        "dsProduto": 'Probiatop ou Simfort',
+                        "dsMedida": "1 sachê",
+                    }
                 }
             ]
         },
         {
             "id": 2,
             "dsRefeicao": "Desjejum",
-            "produtos": [
+            "itens": [
+                { "produto": getProdutoPorPorcao(14, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(125, 0.5), "nrPorcao": 0.5 },
+                { "produto": getProdutoPorPorcao(97, 1), "nrPorcao": 1 },
                 {
-                    "dsProduto": 'Pão de forma 100% integral',
-                    "dsMedidaCaseira": "2 fatias",
-                    "dsPorcao": 50,
-                    "dsCategoria": 'Pães e Similares'
-                }, {
-                    "dsProduto": 'Presunto de Peru',
-                    "dsMedidaCaseira": "2 fatias",
-                    "dsPorcao": 56,
-                    "dsCategoria": 'Carnes'
-                }, {
-                    "dsProduto": 'Queijo Minas, Frescal ou Búfala',
-                    "dsMedidaCaseira": "2-3 fatias pequenas",
-                    "dsPorcao": 40,
-                    "dsCategoria": 'Leite e derivados'
-                }, {
-                    "dsProduto": 'Café',
-                    "dsMedidaCaseira": "1 xícara",
-                    "dsPorcao": '',
-                    "dsCategoria": ''
-                }, {
-                    "dsProduto": 'Leite desnatado em pó',
-                    "dsMedidaCaseira": "2 colher(es) de sobremesa",
-                    "dsPorcao": '20',
-                    "dsCategoria": 'Leite e derivados'
-                }
+                    "produto": {
+                        "dsProduto": 'Café',
+                        "dsMedida": "1 xícara",
+                    }
+                },
+                { "produto": getProdutoPorPorcao(92, 1), "nrPorcao": 1 }
             ]
         },
-
-
         {
             "id": 3,
             "dsRefeicao": "Colação",
-            "produtos": [
-                {
-                    "dsProduto": 'Pão de forma 100% integral',
-                    "dsMedidaCaseira": "1 fatia",
-                    "dsPorcao": 25,
-                    "dsCategoria": 'Pães e Similares'
-                }, {
-                    "dsProduto": 'Atum ao natural (sem óleo)',
-                    "dsMedidaCaseira": "2 colheres de sopa",
-                    "dsPorcao": 40,
-                    "dsCategoria": 'Carnes'
-                }, {
-                    "dsProduto": 'Queijo Minas, Frescal ou Búfala',
-                    "dsMedidaCaseira": "2-3 fatias pequenas",
-                    "dsPorcao": 40,
-                    "dsCategoria": 'Leite e derivados'
-                }, {
-                    "dsProduto": 'Farinha de Linhaça Dourada',
-                    "dsMedidaCaseira": "1 colher de chá",
-                    "dsPorcao": 3,
-                    "dsCategoria": 'Castanhas'
-                }
+            "itens": [
+                { "produto": getProdutoPorPorcao(14, 0.5), "nrPorcao": 0.5 },
+                { "produto": getProdutoPorPorcao(105, 0.5), "nrPorcao": 0.5 },
+                { "produto": getProdutoPorPorcao(141, 1), "nrPorcao": 1 }
             ]
         },
-
-
         {
             "id": 4,
             "dsRefeicao": "Almoço",
-            "produtos": [
+            "itens": [
                 {
-                    "dsProduto": 'Salada crua e colorida',
-                    "dsMedidaCaseira": "à vontade",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Vegetal cru ou cozido'
-                }, {
-                    "dsProduto": 'Vagem refogada',
-                    "dsMedidaCaseira": "4 colheres de sopa",
-                    "dsPorcao": 100,
-                    "dsCategoria": 'Vegetal refogado, grelhado ou vapor'
-                }, {
-                    "dsProduto": 'Bife grelhado',
-                    "dsMedidaCaseira": "1,5 unidade pequena",
-                    "dsPorcao": 90,
-                    "dsCategoria": 'Carnes'
-                }, {
-                    "dsProduto": 'Espaguete integral cozido',
-                    "dsMedidaCaseira": "0,5 pegador",
-                    "dsPorcao": 37.5,
-                    "dsCategoria": 'Arroz'
-                }, {
-                    "dsProduto": 'Feijão marrom',
-                    "dsMedidaCaseira": "0,5 concha média",
-                    "dsPorcao": 25,
-                    "dsCategoria": 'Feijão'
-                }, {
-                    "dsProduto": 'Vitamina C 1g + Ômega 3 1g',
-                    "dsMedidaCaseira": "",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Suplemento'
+                    "produto": {
+                        "dsProduto": 'Salada crua e colorida',
+                        "dsMedida": "à vontade",
+                    }
+                },
+                { "produto": getProdutoPorPorcao(56, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(107, 1.5), "nrPorcao": 1.5 },
+                { "produto": getProdutoPorPorcao(66, 0.5), "nrPorcao": 0.5 },
+                { "produto": getProdutoPorPorcao(76, 0.5), "nrPorcao": 0.5 },
+                {
+                    "produto": {
+                        "dsProduto": 'Vitamina C 1g+Ômega 3 1g',
+                        "dsMedida": "1 cp/cada",
+                    }
                 }
             ]
         },
@@ -143,23 +95,10 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 5,
             "dsRefeicao": "Lanche",
-            "produtos": [
-                {
-                    "dsProduto": 'Morango',
-                    "dsMedidaCaseira": "10 unidades",
-                    "dsPorcao": '150',
-                    "dsCategoria": 'Fruta'
-                }, {
-                    "dsProduto": 'Iogurte',
-                    "dsMedidaCaseira": "1 unidade",
-                    "dsPorcao": 180,
-                    "dsCategoria": 'Leite e derivados'
-                }, {
-                    "dsProduto": 'Castanha do Brasil s/ sal',
-                    "dsMedidaCaseira": "2 unidades",
-                    "dsPorcao": 8,
-                    "dsCategoria": 'Castanhas'
-                }
+            "itens": [
+                { "produto": getProdutoPorPorcao(30, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(90, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(134, 2), "nrPorcao": 2 }
             ]
         },
 
@@ -167,33 +106,17 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 6,
             "dsRefeicao": "Jantar",
-            "produtos": [
+            "itens": [
+                { "produto": getProdutoPorPorcao(18, 0.5), "nrPorcao": 0.5 },
                 {
-                    "dsProduto": 'Rap 10 fit ou integral',
-                    "dsMedidaCaseira": "1 unidade",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Pães e Similares'
-                }, {
-                    "dsProduto": 'Alface, tomate, rúcula',
-                    "dsMedidaCaseira": "à vontade",
-                    "dsPorcao": '',
-                    "dsCategoria": 'Vegetal cru ou cozido'
-                }, {
-                    "dsProduto": 'Atum ao natural (s/ óleo)',
-                    "dsMedidaCaseira": "4 colheres de sopa",
-                    "dsPorcao": 80,
-                    "dsCategoria": 'Carnes'
-                }, {
-                    "dsProduto": 'Creme de ricota',
-                    "dsMedidaCaseira": "1 colher de sopa",
-                    "dsPorcao": 35,
-                    "dsCategoria": 'Leite e derivados'
-                }, {
-                    "dsProduto": 'Gergelim',
-                    "dsMedidaCaseira": "1 colher de sobremesa",
-                    "dsPorcao": 3,
-                    "dsCategoria": 'Castanhas'
-                }
+                    "produto": {
+                        "dsProduto": 'Alface, rúcula, tomate',
+                        "dsMedida": "à vontade",
+                    }
+                },
+                { "produto": getProdutoPorPorcao(105, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(101, 1), "nrPorcao": 1 },
+                { "produto": getProdutoPorPorcao(135, 1), "nrPorcao": 1 }
             ]
         }
     ];
@@ -206,7 +129,6 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         refeicaoSelecionada = refeicoesList.find(refeicao => {
             return refeicao.id == idRefeicao;
         });
-
         return refeicaoSelecionada;
     };
 
@@ -214,12 +136,12 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
      * Substitui um dos itens da refeição pelo novo produto passado
      */
     let _trocaItemDaRefeicao = (produtoAntigo, produtoNovo) => {
-        refeicaoSelecionada.produtos = refeicaoSelecionada.produtos.map((produto) => {
-            if (produto.dsProduto == produtoAntigo.dsProduto) {
-                return produtoNovo;
-            }
+        refeicaoSelecionada.itens = refeicaoSelecionada.itens.map((item) => {
 
-            return produto;
+            if (item.produto.dsProduto == produtoAntigo.dsProduto) {
+                return { "produto": getProdutoPorPorcao(produtoNovo.id, item.nrPorcao), "nrPorcao": item.nrPorcao };
+            }
+            return item;
         });
 
         PersistenceService.save(refeicaoSelecionada, KEY_REFEICOES);
@@ -233,10 +155,24 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         let refeicoesList = PersistenceService.list(KEY_REFEICOES);
 
         if (!(refeicoesList.length > 0)) {
-            console.log(refeicoes)
 
             PersistenceService.initDb(refeicoes, KEY_REFEICOES);
         }
+    };
+
+
+
+    function getProdutoPorPorcao(idProduto, nrPorcao) {
+        var produto = ProdutoService.getProduto(idProduto);
+        if (nrPorcao < 1 || nrPorcao > 1) {
+            produto.nrGrama = nrPorcao * produto.nrGrama;
+            produto.nrMedida = nrPorcao * produto.nrMedida;
+
+        }
+        produto.dsMedida = produto.nrMedida + " " + produto.dsMedida
+            + (produto.nrGrama != null && produto.nrGrama != "" ? " ou " + produto.nrGrama + produto.unidade : "");
+
+        return produto;
     };
 
     initDatabase();

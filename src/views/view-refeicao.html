@@ -7,36 +7,36 @@
 
 
 <div class="list-group">
-    <li class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="produto in refeicao.produtos">
+    <li class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="item in refeicao.itens">
 
-        <div hm-press="onPress(produto)">
-            <span class="categoria pao" style="float:right;" ng-if="produto.dsCategoria == 'Pães e Similares'"> 
+        <div hm-press="onPress(item)">
+            <span class="categoria pao" style="float:right;" ng-if="item.produto.dsCategoria == 'Pães e Similares'"> 
                 <img src="images/pao.png" class="img-fluid">
             </span>
-            <span class="categoria castanha" style="float:right;" ng-if="produto.dsCategoria == 'Castanhas'"> 
+            <span class="categoria castanha" style="float:right;" ng-if="item.produto.dsCategoria == 'Castanhas'"> 
                 <img src="images/castanha.png" class="img-fluid">
             </span>
-            <span class="categoria carne" style="float:right;" ng-if="produto.dsCategoria == 'Carnes'"> 
+            <span class="categoria carne" style="float:right;" ng-if="item.produto.dsCategoria == 'Carnes'"> 
                 <img src="images/carne.png" class="img-fluid">
             </span>
-            <span class="categoria leite" style="float:right;" ng-if="produto.dsCategoria == 'Leite e derivados'"> 
+            <span class="categoria leite" style="float:right;" ng-if="item.produto.dsCategoria == 'Leite e derivados'"> 
                 <img src="images/leite.png" class="img-fluid">
             </span>
-            <span class="categoria arroz" style="float:right;" ng-if="produto.dsCategoria == 'Arroz'"> 
+            <span class="categoria arroz" style="float:right;" ng-if="item.produto.dsCategoria == 'Arroz'"> 
                 <img src="images/arroz.png" class="img-fluid">
             </span>
-            <span class="categoria feijao" style="float:right;" ng-if="produto.dsCategoria == 'Feijão'"> 
+            <span class="categoria feijao" style="float:right;" ng-if="item.produto.dsCategoria == 'Feijão'"> 
                 <img src="images/feijao.png" class="img-fluid">
             </span>
-            <span class="categoria vegetal" style="float:right;" ng-if="produto.dsCategoria == 'Vegetal refogado, grelhado ou vapor'"> 
+            <span class="categoria vegetal" style="float:right;" ng-if="item.produto.dsCategoria == 'Vegetal refogado, grelhado ou vapor'"> 
                 <img src="images/vegetal.png" class="img-fluid">
             </span>
-            <span class="categoria fruta" style="float:right;" ng-if="produto.dsCategoria == 'Fruta'"> 
+            <span class="categoria fruta" style="float:right;" ng-if="item.produto.dsCategoria == 'Fruta'"> 
                 <img src="images/fruta.png" class="img-fluid">
             </span>
-            <h5 class="mb-1">{{produto.dsProduto}}</h5>
+            <h5 class="mb-1">{{item.produto.dsProduto}}</h5>
 
-            <small>{{produto.dsMedidaCaseira}} ou {{produto.dsPorcao}}g</small>
+            <small>{{item.produto.dsMedida}} </small>
         </div>
     </li>
 </div>

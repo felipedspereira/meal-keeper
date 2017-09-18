@@ -20,12 +20,12 @@ angular.module('nutrikeeper').controller('RefeicaoController', ['$scope', '$docu
         /**
          * Trata o evento de seleção de um produto (tap'n hold em um item)
          */
-        $scope.onPress = (produto) => {
-            if (produto.dsCategoria) {
+        $scope.onPress = (item) => {
+            if (item.produto.dsCategoria) {
                 
-                $scope.produtoSelecionado = produto;
+                $scope.produtoSelecionado = item.produto;
     
-                $scope.listaSubstituicao = ProdutoService.getProdutos(produto.dsCategoria);
+                $scope.listaSubstituicao = ProdutoService.getProdutos(item.produto.dsCategoria);
     
                 modal.modal();
             } else {
