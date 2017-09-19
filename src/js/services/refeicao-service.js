@@ -149,7 +149,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         return refeicaoSelecionada.produtos;
     }
 
-    let initDatabase = () => {
+    let _initDatabase = () => {
         console.log('inicializando o banco de refeicoes');
 
         let refeicoesList = PersistenceService.list(KEY_REFEICOES);
@@ -175,7 +175,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         return produto;
     };
 
-    initDatabase();
+    _initDatabase();
 
     return {
         getRefeicao: _getRefeicao,

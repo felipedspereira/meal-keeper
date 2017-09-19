@@ -15,10 +15,11 @@ angular.module('nutrikeeper', ['ngRoute', 'hmTouchEvents', 'ngAnimate'])
                  templateUrl: "views/refeicoes.html",
                  controller: 'RefeicaoController'
              })
-           .when("/", {
-                templateUrl: "views/teste.html"
+           .otherwise({
+                templateUrl: "views/refeicoes.html",
+                controller: 'RefeicaoController'
             });
     })
     .run(['RefeicaoService', 'ProdutoService', function(RefeicaoService, ProdutoService) {
-        // forçando inicialização do banco de dados de refeicao e produto
+        // forçando inicialização do banco de dados de refeicao e produto através da injeção dessas duas dependẽncias
     }]);

@@ -170,7 +170,7 @@ angular.module('nutrikeeper').factory('ProdutoService', ['$http', 'PersistenceSe
         return produtosSelecionados;
     };
 
-    let initDatabase = () => {
+    let _initDatabase = () => {
         console.log('inicializando o banco de produtos');
 
         let produtosList = PersistenceService.list(KEY_PRODUTOS);
@@ -179,7 +179,7 @@ angular.module('nutrikeeper').factory('ProdutoService', ['$http', 'PersistenceSe
         }
     };
 
-    initDatabase();
+    _initDatabase();
 
     return {
         getProduto: _getProduto,

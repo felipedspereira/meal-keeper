@@ -18,7 +18,6 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 
@@ -31,16 +30,7 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <ng-include src="'views/header.html'"></ng-include>
-
-    <div class="alert alert-success text-center fade" role="alert" ng-show="successMessage">
-        {{successMessage}}
-    </div>
-    <div class="alert alert-warning text-center fade" role="alert" ng-show="warningMessage">
-        {{warningMessage}}
-    </div>
-    <div class="alert alert-danger text-center fade" role="alert" ng-show="errorMessage">
-        {{errorMessage}}
-    </div>
+    
     <ng-view id="appview"></ng-view>
 
     <!--<ng-include src="'views/footer.html'"></ng-include>-->
@@ -64,12 +54,13 @@
     <script src="js/services/message-service.js"></script>
     <script src="js/services/persistence-service.js"></script>
 
-    <!-- Desabilitando para não atraplhar durante o desenvolvimento-->
+    <!-- Desabilitando para não atraplhar durante o desenvolvimento
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
         }
-    </script> 
+    </script>
+    -->
 </body>
 
 </html>
