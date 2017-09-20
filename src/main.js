@@ -12,17 +12,18 @@ angular.module('nutrikeeper', ['ngRoute', 'hmTouchEvents', 'ngAnimate'])
 
             })
             .when("/refeicoes", {
-                 templateUrl: "views/refeicoes.html",
-                 controller: 'RefeicaoController'
-             })
+                templateUrl: "views/refeicoes.html",
+                controller: 'RefeicaoController'
+            })
             .when("/produtos", {
-                 templateUrl: "views/produtos.html",
-                 controller: 'ProdutoController'
-             })
-           .when("/", {
-                templateUrl: "views/teste.html"
+                templateUrl: "views/produtos.html",
+                controller: 'ProdutoController'
+            })
+            .otherwise({
+                templateUrl: "views/refeicoes.html",
+                controller: 'RefeicaoController'
             });
     })
-    .run(['RefeicaoService', 'ProdutoService', function(RefeicaoService, ProdutoService) {
-        // forçando inicialização do banco de dados de refeicao e produto
+    .run(['RefeicaoService', 'ProdutoService', function (RefeicaoService, ProdutoService) {
+        // forçando inicialização do banco de dados de refeicao e produto através da injeção dessas duas dependẽncias
     }]);

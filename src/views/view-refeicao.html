@@ -41,7 +41,11 @@
     </li>
 </div>
 
-<!-- Modal -->
+<button type="button" class="btn btn-lg btn-block fixed-bottom" ng-class="{'btn-primary': !refeicao.realizada, 'btn-success': refeicao.realizada}" ng-disabled="refeicao.realizada" data-toggle="modal" data-target="#confirmaRefeicao">
+    <i ng-class="{'fa fa-check': refeicao.realizada, 'fa fa-thumbs-up': !refeicao.realizada}" aria-hidden="true"></i>  {{!refeicao.realizada? 'Marcar como feita!' : 'Refeição realizada!'}}
+</button>
+
+<!-- Modal de substituição de item -->
 <div class="modal fade" id="editRefeicaoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document" style="overflow-y: auto">
         <div class="modal-content">
@@ -89,15 +93,45 @@
                     </div>
                 </div>
                 <div class="list-group" style="overflow-y: auto; height: 250px; padding: 0">
-                    <li class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="list" ng-repeat="produto in listaSubstituicao" ng-click="selecionaNovoProduto(produto)">
+                    <li class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="list" ng-repeat="produto in listaSubstituicao"
+                        ng-click="selecionaNovoProduto(produto)">
                         <h5 class="mb-1">{{produto.dsProduto}}</h5>
                         <small>{{produto.nrGrama}}{{produto.unidade}} ou {{produto.nrMedida}} {{produto.dsMedida}}</small>
                     </li>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" ng-disabled="novoProdutoSelecionado == undefined" ng-click="substituiProduto()">Substituir</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="fa fa-times" aria-hidden="true"></i> Fechar
+                </button>
+                <button type="button" class="btn btn-primary" ng-disabled="novoProdutoSelecionado == undefined" ng-click="substituiProduto()">
+                    <i class="fa fa-retweet" aria-hidden="true"></i> Substituir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmação de refeição realizada -->
+<div class="modal fade" id="confirmaRefeicao" tabindex="-1" role="dialog" aria-labelledby="confirmaRefeicaoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmaRefeicaoLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p class="p-2">Você já fez esta refeição hoje?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="fa fa-times" aria-hidden="true"></i> Fechar
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="confirmaRefeicao(refeicao)">
+                    <i class="fa fa-check" aria-hidden="true"></i> Sim!!
+                </button>
             </div>
         </div>
     </div>

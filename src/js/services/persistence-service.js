@@ -4,7 +4,7 @@ angular.module('nutrikeeper').factory('PersistenceService', [function () {
         localStorage.setItem(key, JSON.stringify(data));
     }
 
-    let _saveList = (data, key) => {
+    let _save = (data, key) => {
         let lista = _getList(key);
 
         data = lista.map(refeicao => {
@@ -23,7 +23,7 @@ angular.module('nutrikeeper').factory('PersistenceService', [function () {
     }
 
     return {
-        save: _saveList,
+        save: _save,
         list: _getList,
         initDb: _initDb
     }
