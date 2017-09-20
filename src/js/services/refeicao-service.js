@@ -167,13 +167,9 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         // TODO: implementar baixa no estoque dos produtos ;)
         return $q.when();
     };
-<<<<<<< HEAD
 
 
     //Esta função retorna o produto com os atributos nrGrama e nrMedida já calculados de acordo com a porção recebida.
-=======
-    
->>>>>>> 9cb71d8c4786974ca1ad72a1647253b32d512a70
     function getProdutoPorPorcao(idProduto, nrPorcao) {
         var produto = ProdutoService.getProduto(idProduto);
         if (nrPorcao < 1 || nrPorcao > 1) {
