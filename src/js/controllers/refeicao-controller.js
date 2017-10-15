@@ -59,7 +59,7 @@ angular.module('nutrikeeper').controller('RefeicaoController', ['$scope', '$docu
             RefeicaoService.confirmaRefeicao(refeicao)
                 .then(() => {
                     modalConfirmaRefeicao.modal('hide');
-                    MessageService.success('Muito bem!!', 3000);
+                    MessageService.success('Refeição realizada!', 3000);
                     refeicao.realizada = true;
                 })
                 .catch(e => {
