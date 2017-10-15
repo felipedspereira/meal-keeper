@@ -144,3 +144,8 @@ nav.navbar {
 .card-img-top {
   height: 75%;
 }
+
+.btn:disabled.refeicao-realizada {
+  opacity: 1;
+}
+

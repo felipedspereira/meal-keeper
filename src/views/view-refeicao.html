@@ -41,7 +41,7 @@
     </li>
 </div>
 
-<button type="button" class="btn btn-lg btn-block fixed-bottom" ng-class="{'btn-primary': !refeicao.realizada, 'btn-success': refeicao.realizada}" ng-disabled="refeicao.realizada" data-toggle="modal" data-target="#confirmaRefeicao">
+<button type="button" class="btn btn-lg btn-block fixed-bottom refeicao-realizada" ng-class="{'btn-primary': !refeicao.realizada, 'btn-success': refeicao.realizada}" ng-disabled="refeicao.realizada" data-toggle="modal" data-target="#confirmaRefeicao">
     <i ng-class="{'fa fa-check': refeicao.realizada, 'fa fa-thumbs-up': !refeicao.realizada}" aria-hidden="true"></i>  {{!refeicao.realizada? 'Marcar como feita!' : 'Refeição realizada!'}}
 </button>
 
@@ -130,7 +130,7 @@
                     <i class="fa fa-times" aria-hidden="true"></i> Fechar
                 </button>
                 <button type="button" class="btn btn-primary" ng-click="confirmaRefeicao(refeicao)">
-                    <i class="fa fa-check" aria-hidden="true"></i> Sim!!
+                    <i class="fa fa-check" aria-hidden="true"></i> Sim
                 </button>
             </div>
         </div>
