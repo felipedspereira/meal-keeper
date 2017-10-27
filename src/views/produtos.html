@@ -2,7 +2,7 @@
     <div class="list-group">
     <li class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="produto in produtos">
 
-        <div hm-press="onPress(produto)">
+        <div ng-click="loadProduto(produto)">
             <span class="categoria pao" style="float:right;" ng-if="produto.dsCategoria == 'Pães e Similares'"> 
                 <img src="images/pao.png" class="img-fluid">
             </span>

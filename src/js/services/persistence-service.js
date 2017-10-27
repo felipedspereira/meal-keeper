@@ -7,12 +7,12 @@ angular.module('nutrikeeper').factory('PersistenceService', [function () {
     let _save = (data, key) => {
         let lista = _getList(key);
 
-        data = lista.map(refeicao => {
-            if (refeicao.id == data.id) {
+        data = lista.map(filter => {
+            if (filter.id == data.id) {
                 return data;
             }
 
-            return refeicao;
+            return filter;
         });
 
         localStorage.setItem(key, JSON.stringify(data));
