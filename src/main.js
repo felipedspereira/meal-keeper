@@ -19,11 +19,19 @@ angular.module('nutrikeeper', ['ngRoute', 'hmTouchEvents', 'ngAnimate'])
                 templateUrl: "views/produtos.html",
                 controller: 'ProdutoController'
             })
+            .when("/escolhaUsuario", {
+                templateUrl: "views/escolha-usuario.html",
+                controller: 'EscolhaUsuarioController'
+            })
             .otherwise({
                 templateUrl: "views/refeicoes.html",
                 controller: 'RefeicaoController'
             });
     })
-    .run(['RefeicaoService', 'ProdutoService', function (RefeicaoService, ProdutoService) {
+    .run(['RefeicaoService', 'ProdutoService', '$location', function (RefeicaoService, ProdutoService, $location) {
         // forçando inicialização do banco de dados de refeicao e produto através da injeção dessas duas dependẽncias
+
+        if (RefeicaoService.isSemRefeicoesCadastradas()) {
+            $location.path('/escolhaUsuario');
+        }
     }]);

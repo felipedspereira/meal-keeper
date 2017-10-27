@@ -1,10 +1,11 @@
 angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceService', 'ProdutoService', '$q', function ($http, PersistenceService, ProdutoService, $q) {
     const KEY_REFEICOES = 'nk-refeicoes';
 
-    const refeicoes = [
+    const refeicoesValeria = [
         {
             "id": 1,
             "dsRefeicao": "Em jejum",
+            "dsCategoria": "Treino",            
             "realizada": false,
             "itens": [
                 {
@@ -48,6 +49,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 2,
             "dsRefeicao": "Desjejum",
+            "dsCategoria": "Treino",            
             "realizada": false,
             "itens": [
                 { "produto": getProdutoPorPorcao(14, 1), "nrPorcao": 1 }, //Pães e Similares
@@ -65,6 +67,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 3,
             "dsRefeicao": "Colação",
+            "dsCategoria": "Treino",            
             "realizada": false,
             "itens": [
                 { "produto": getProdutoPorPorcao(14, 0.5), "nrPorcao": 0.5 }, //Pães e Similares
@@ -75,6 +78,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 4,
             "dsRefeicao": "Almoço",
+            "dsCategoria": "Treino",
             "realizada": false,
             "itens": [
                 {
@@ -99,6 +103,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 5,
             "dsRefeicao": "Lanche",
+            "dsCategoria": "Treino",
             "realizada": false,
             "itens": [
                 { "produto": getProdutoPorPorcao(30, 1), "nrPorcao": 1 }, //Fruta
@@ -111,6 +116,7 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         {
             "id": 6,
             "dsRefeicao": "Jantar",
+            "dsCategoria": "Treino",
             "realizada": false,
             "itens": [
                 { "produto": getProdutoPorPorcao(18, 0.5), "nrPorcao": 0.5 }, //Pães e Similares
@@ -479,22 +485,26 @@ angular.module('nutrikeeper').factory('RefeicaoService', ['$http', 'PersistenceS
         });
     };
 
-    let _initDatabase = () => {
+    let _initDatabase = (user) => {
         console.log('inicializando o banco de refeicoes');
 
-        let refeicoesList = PersistenceService.list(KEY_REFEICOES);
-
-        if (!(refeicoesList.length > 0)) {
-
-            PersistenceService.initDb(refeicoes, KEY_REFEICOES);
+        if (_isSemRefeicoesCadastradas()) {
+            PersistenceService.initDb(user == 'felipe' ?refeicoesFelipe : refeicoesValeria, KEY_REFEICOES);
         }
     };
 
-    _initDatabase();
+    let _isSemRefeicoesCadastradas = () => {
+        let refeicoesList = PersistenceService.list(KEY_REFEICOES);
+        console.log(refeicoesList);
+        
+        return refeicoesList.length <= 0;
+    }
 
     return {
         getRefeicao: _getRefeicao,
         trocaItemDaRefeicao: _trocaItemDaRefeicao,
-        confirmaRefeicao: _confirmaRefeicaoRealizada
+        confirmaRefeicao: _confirmaRefeicaoRealizada,
+        isSemRefeicoesCadastradas: _isSemRefeicoesCadastradas,
+        initDatabase: _initDatabase
     }
 }]);
